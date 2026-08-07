@@ -33,7 +33,7 @@ function Layout() {
 
       {/* Rodapé fixo */}
       <footer className="layout-footer">
-        <small>© 2026 - Desenvolvido por Renan Santiago Correia</small>
+        <small>©Copyright 2026 - Desenvolvido por Renan Santiago Correia</small>
       </footer>
     </div>
   );
