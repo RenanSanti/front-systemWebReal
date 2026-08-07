@@ -10,10 +10,13 @@ function Layout() {
           <nav>
             <ul className="nav nav-pills">
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/">Cadastro</Link>
+                <Link className="nav-link text-white" to="/">Usuários</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/segunda">Segunda Tela</Link>
+                <Link className="nav-link text-white" to="/vendas">Vendas</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/produto">Produtos</Link>
               </li>
             </ul>
           </nav>

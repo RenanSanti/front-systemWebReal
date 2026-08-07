@@ -1,6 +1,7 @@
 import Formulario from "./componente/Formulario";
 import Tabela from "./componente/Tabela";
-import SegundaTela from "./componente/SegundaTela";
+import Venda from "./componente/Venda";
+import Produto from "./componente/Produto";
 import Layout from "./componente/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -112,8 +113,9 @@ function App() {
               </>
             }
           />
-          {/* Segunda tela */}
-          <Route path="segunda" element={<SegundaTela />} />
+          {/* Venda */}
+          <Route path="vendas" element={<Venda />} />
+          <Route path="produto" element={<Produto />} />
         </Route>
       </Routes>
     </Router>

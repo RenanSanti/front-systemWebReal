@@ -7,7 +7,7 @@ function Formulario({botao, pessoaSelecionada, atualizarPessoaSelecionada, cadas
     //Render
     return (
             
-        <form><h1>{JSON.stringify(pessoaSelecionada)}</h1>
+        <form><h1>{/*JSON.stringify(pessoaSelecionada)*/}</h1>
             <input type="number" placeholder="Seu Código"  className="form-control" name="id" readOnly value={pessoaSelecionada.id || ""} />
             <input type="text" placeholder="Digite seu nome" className="form-control" name="nome" value={pessoaSelecionada.nome || ""} onChange={atualizarPessoaSelecionada} />
             <input type="text" placeholder="Digite seu email" className="form-control" name="email" value={pessoaSelecionada.email || ""} onChange={atualizarPessoaSelecionada} />
