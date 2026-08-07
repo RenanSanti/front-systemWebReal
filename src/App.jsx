@@ -18,7 +18,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/usuarios/listarUsuarios")
+    fetch("https://systemawebreal.onrender.com/api/usuarios/listarUsuarios")
       .then(resposta => resposta.json())
       .then(dados => {
         setPessoas(dados);
@@ -36,7 +36,7 @@ function App() {
   };
 
   const cadastrarPessoa = () => {
-    fetch("http://localhost:8080/api/usuarios/cadastrarUsuario", {
+    fetch("https://systemawebreal.onrender.com/api/usuarios/cadastrarUsuario", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(pessoaSelecionada)
@@ -60,7 +60,7 @@ function App() {
   };
 
   const alterar = () => {
-    fetch("http://localhost:8080/api/usuarios/alterarUsuario/" + pessoaSelecionada.id, {
+    fetch("https://systemawebreal.onrender.com/api/usuarios/alterarUsuario/" + pessoaSelecionada.id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(pessoaSelecionada)
@@ -74,7 +74,7 @@ function App() {
   };
 
   const deletar = () => {
-    fetch("http://localhost:8080/api/usuarios/deletarUsuario/" + pessoaSelecionada.id, {
+    fetch("https://systemawebreal.onrender.com/api/usuarios/deletarUsuario/" + pessoaSelecionada.id, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
     })
