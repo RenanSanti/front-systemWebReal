@@ -1,7 +1,6 @@
 .vendas-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding: 40px;
   background: #f9fafc;
   min-height: 100vh;
@@ -10,10 +9,10 @@
 .vendas-card {
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 30px 40px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 h2 {
@@ -48,12 +47,12 @@ label {
 
 input[type="text"],
 input[type="number"],
-input[type="checkbox"],
 input {
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
+  margin-right: 12px;
 }
 
 input:focus {
@@ -62,24 +61,24 @@ input:focus {
   box-shadow: 0 0 4px rgba(52, 152, 219, 0.3);
 }
 
-.lentes-grid,
-.medidas-grid {
+/* Grid para lentes e medidas */
+.lentes-grid, .medidas-grid {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 10px;
 }
 
-.lente-col,
-.medida-col {
+.lente-row, .medida-row {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;   /* inputs na horizontal */
+  align-items: center;
+  gap: 12px;
 }
 
-span {
+.lente-row span, .medida-row span {
   font-weight: 600;
-  color: #2c3e50;
+  min-width: 50px;       /* espaço fixo para OD/OE */
 }
 
 .checkbox-row {
@@ -90,4 +89,8 @@ span {
 .checkbox-row label {
   font-weight: 500;
   color: #333;
+}
+
+.input {
+  margin:5px;  /* adiciona espaço à direita de cada input */
 }

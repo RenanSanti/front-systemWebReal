@@ -13,7 +13,7 @@ function Formulario({botao, pessoaSelecionada, atualizarPessoaSelecionada, cadas
             <input type="text" placeholder="Digite seu email" className="form-control" name="email" value={pessoaSelecionada.email || ""} onChange={atualizarPessoaSelecionada} />
             <input type="text" placeholder="Digite seu usuario" className="form-control" name="usuario" value={pessoaSelecionada.usuario || ""} onChange={atualizarPessoaSelecionada} />
             <input type="text" placeholder="Digite seu senha" className="form-control" name="senha" value={pessoaSelecionada.senha || ""} onChange={atualizarPessoaSelecionada} />
-            
+            <input type="button" className="btn btn-primary" value="Consultar"  />
             {
                 botao
                 ?

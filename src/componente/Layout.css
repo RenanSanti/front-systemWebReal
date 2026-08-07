@@ -1,0 +1,107 @@
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9fafc;
+}
+
+.layout-header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 15px 30px;
+}
+
+.layout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+
+
+.layout-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-area {
+  margin-bottom: 20px;
+}
+
+.table-area {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.table-scroll {
+  max-height: 250px; /* controla altura da tabela */
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #3498db;
+  color: #fff;
+}
+
+th, td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+tr:hover {
+  background: #f1f1f1;
+}
+
+.layout-footer {
+  background: #ecf0f1;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;          /* coloca os itens lado a lado */
+  gap: 20px;              /* espaçamento entre os links */
+  margin: 0;
+  padding: 0;
+  align-items: center;    /* alinha todos no mesmo nível vertical */
+}
+
+.nav-links li {
+  display: flex;          /* garante que o link dentro fique alinhado */
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;      /* dá altura uniforme */
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+

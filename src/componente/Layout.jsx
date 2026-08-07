@@ -1,37 +1,38 @@
 import { Outlet, Link } from "react-router-dom";
+import "./Layout.css";
 
 function Layout() {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="layout-wrapper">
       {/* Cabeçalho fixo */}
-      <header className="bg-dark text-white p-3">
-        <div className="container d-flex justify-content-between align-items-center">
-          <h1 className="h4">Systema Web Real</h1>
+      <header className="layout-header">
+        <div className="layout-container">
+          <h1 className="logo">Systema Web Real</h1>
           <nav>
-            <ul className="nav nav-pills">
-              <li className="nav-item">
-                <Link className="nav-link text-white" to="/">Usuários</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-white" to="/vendas">Vendas</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-white" to="/produto">Produtos</Link>
-              </li>
+            <ul className="nav-links">
+              <li><Link to="/">Usuários</Link></li>
+              <li><Link to="/vendas">Vendas</Link></li>
+              <li><Link to="/produto">Produtos</Link></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      {/* Conteúdo centralizado */}
-      <main className="flex-grow-1 d-flex align-items-center justify-content-center">
-        <div className="container">
-          <Outlet />
+      {/* Conteúdo dividido */}
+      <main className="layout-main">
+        <div className="layout-container">
+          {/* Área de formulário/outlet */}
+          <div className="form-area">
+            <Outlet />
+          </div>
+
+          
+          
         </div>
       </main>
 
       {/* Rodapé fixo */}
-      <footer className="bg-light text-center p-3 mt-auto">
+      <footer className="layout-footer">
         <small>© 2026 - Desenvolvido por Renan Santiago Correia</small>
       </footer>
     </div>

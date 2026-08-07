@@ -1,0 +1,21 @@
+.table-area {
+  margin-top: 20px;
+}
+
+.table-scroll {
+  max-height: 250px;   /* controla altura da tabela */
+  overflow-y: auto;    /* ativa scroll vertical */
+}
+
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-scroll thead th {
+  position: sticky;    /* mantém cabeçalho fixo */
+  top: 0;
+  background: #3498db;
+  color: #fff;
+  z-index: 2;
+}

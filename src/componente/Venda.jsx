@@ -28,6 +28,7 @@ function Vendas() {
               name="os"
               value={form.os}
               onChange={handleChange}
+              className="input"
               placeholder="Digite o número da OS"
             />
           </div>
@@ -40,6 +41,7 @@ function Vendas() {
               name="cliente"
               value={form.cliente}
               onChange={handleChange}
+              className="input"
               placeholder="Digite o nome do cliente"
             />
           </div>
@@ -51,6 +53,7 @@ function Vendas() {
               type="text"
               name="otica"
               value={form.otica}
+              className="input"
               onChange={handleChange}
             />
           </div>
@@ -60,15 +63,15 @@ function Vendas() {
         <div className="lentes-grid">
           <div className="lente-col">
             <span>O.D.</span>
-            <input placeholder="Esférico" />
-            <input placeholder="Cilíndrico" />
-            <input placeholder="Eixo" />
+            <input id="esferico-od" type="text" placeholder="Esférico" className="input"/>
+            <input id="cilindrico-od" type="text" placeholder="Cilíndrico"className="input"/>
+            <input id="eixo-od" type="text" placeholder="Eixo" className="input"/>
           </div>
           <div className="lente-col">
-            <span>O.E.</span>
-            <input placeholder="Esférico" />
-            <input placeholder="Cilíndrico" />
-            <input placeholder="Eixo" />
+            <span>O.E. </span>
+            <input id="esferico-oe" type="text" placeholder="Esférico"className="input"/>
+            <input id="cilindrico-oe" type="text" placeholder="Cilíndrico" className="input"/>
+            <input id="eixo-oe" type="text" placeholder="Eixo" className="input"/>
           </div>
         </div>
 
@@ -76,13 +79,13 @@ function Vendas() {
         <div className="medidas-grid">
           <div className="medida-col">
             <span>O.D.</span>
-            <input placeholder="DNP" />
-            <input placeholder="Altura" />
+            <input id="dnp-od" className="input" type="text" placeholder="DNP" />
+            <input id="altura-od" className="input" type="text" placeholder="Altura" />
           </div>
           <div className="medida-col">
             <span>O.E.</span>
-            <input placeholder="DNP" />
-            <input placeholder="Altura" />
+            <input id="dnp-oe" className="input" type="text" placeholder="DNP" />
+            <input id="altura-oe" className="input" type="text" placeholder="Altura" />
           </div>
         </div>
 
