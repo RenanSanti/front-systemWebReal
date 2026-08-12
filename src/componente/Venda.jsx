@@ -90,15 +90,17 @@ function Vendas() {
         </div>
 
         <div className="checkbox-row">
-          <label>
             <input
-              type="checkbox"
-              name="prisma"
-              checked={form.prisma}
-              onChange={handleChange}
-            />
-            Incluir Prisma
-          </label>
+                type="checkbox"
+                name="prisma"
+                checked={form.prisma}
+                onChange={handleChange}/>
+            <label>
+              Incluir Prisma
+            </label>
+            </div>
+        <div className="checkbox-row">  
+            <input type="button" className="btn btn-primary" value=" Cadastrar Venda"  />
         </div>
       </div>
     </div>

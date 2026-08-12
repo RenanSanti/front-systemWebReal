@@ -25,9 +25,6 @@ function Layout() {
           <div className="form-area">
             <Outlet />
           </div>
-
-          
-          
         </div>
       </main>
 

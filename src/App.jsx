@@ -17,6 +17,23 @@ function App() {
     usuario: "",
     senha: ""
   });
+  // Estado de produtos
+  const [produtos, setProdutos] = useState([]);
+  const [botaoProduto, setBotaoProduto] = useState(true);
+  const [produtoSelecionado, setProdutoSelecionado] = useState({
+    id: null,
+    nome: "",
+    material: "",
+    quantidade: "",
+    precoCompra: "",
+    precoVenda: ""
+  });
+
+   // Funções de Produto
+  const atualizarProdutoSelecionado = (e) => {
+    const { name, value } = e.target;
+    setProdutoSelecionado({ ...produtoSelecionado, [name]: value });
+  };
 
   useEffect(() => {
     fetch("https://systemawebreal.onrender.com/api/usuarios/listarUsuarios")
@@ -87,6 +104,30 @@ function App() {
       })
       .catch(error => console.error("Erro ao deletar pessoa:", error));
   };
+  
+  const cadastrarProduto = () => {
+    fetch("https://systemawebreal.onrender.com/api/produtos/cadastrarProduto", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(produtoSelecionado)
+    })
+      .then(resposta => resposta.json())
+      .then(dados => {
+        setProdutos(prev => [...prev, dados]);
+        cancelarProduto();
+      })
+      .catch(error => console.error("Erro ao cadastrar produto:", error));
+  };
+
+  const selecionarProdutoEspecifico = (indice) => {
+    setProdutoSelecionado(produtos[indice]);
+    setBotaoProduto(false);
+  };
+
+  const cancelarProduto = () => {
+    setProdutoSelecionado({ id: null, nome: "", material: "", quantidade: "", precoCompra: "", precoVenda: "" });
+    setBotaoProduto(true);
+  };
 
   return (
     <Router>
@@ -115,7 +156,20 @@ function App() {
           />
           {/* Venda */}
           <Route path="vendas" element={<Venda />} />
-          <Route path="produto" element={<Produto />} />
+          <Route
+            path="produto"
+            element={
+              <>
+                <Produto
+                  botao={botaoProduto}
+                  produtoSelecionado={produtoSelecionado}
+                  atualizarProdutoSelecionado={atualizarProdutoSelecionado}
+                  cadastrarProduto={cadastrarProduto}
+                  cancelar={cancelarProduto}
+                />
+              </>
+            }
+          />
         </Route>
       </Routes>
     </Router>
