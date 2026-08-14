@@ -1,5 +1,6 @@
 import Formulario from "./componente/Formulario";
 import Tabela from "./componente/Tabela";
+import TabelaProduto from "./componente/TabelaProduto";
 import Venda from "./componente/Venda";
 import Produto from "./componente/Produto";
 import Layout from "./componente/Layout";
@@ -23,7 +24,13 @@ function App() {
   const [produtoSelecionado, setProdutoSelecionado] = useState({
     id: null,
     nome: "",
-    material: "",
+    //tipoProduto: "VISAO SIMPLES",
+    //material: "RESINA",
+    tipoLente:"VISAO SIMPLES",
+    tipoMaterial: "RESINA",
+    linha: "VS AR CHAVE 01",
+    grauEsferico: "-000",
+    grauCilindrico: "-000",
     quantidade: "",
     precoCompra: "",
     precoVenda: ""
@@ -106,7 +113,8 @@ function App() {
   };
   
   const cadastrarProduto = () => {
-    fetch("https://systemawebreal.onrender.com/api/produtos/cadastrarProduto", {
+    //fetch("https://systemawebreal.onrender.com/api/produtos/cadastrarProduto", {
+    fetch("http://localhost:8080/api/produtos/cadastrarProduto", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(produtoSelecionado)
@@ -114,6 +122,7 @@ function App() {
       .then(resposta => resposta.json())
       .then(dados => {
         setProdutos(prev => [...prev, dados]);
+        listarProdutos();
         cancelarProduto();
       })
       .catch(error => console.error("Erro ao cadastrar produto:", error));
@@ -125,9 +134,35 @@ function App() {
   };
 
   const cancelarProduto = () => {
-    setProdutoSelecionado({ id: null, nome: "", material: "", quantidade: "", precoCompra: "", precoVenda: "" });
+    setProdutoSelecionado({ 
+        id: null, 
+        nome: "", 
+        tipoLente: "VISAO SIMPLES",
+        tipoMaterial: "RESINA",
+        linha: "VS AR CHAVE 01",
+        grauEsferico: "-000",
+        grauCilindrico: "-000",
+        quantidade: "",
+        precoCompra: "",
+        precoVenda: "" });
     setBotaoProduto(true);
   };
+
+// Buscar produtos ao abrir a tela
+useEffect(() => {
+   listarProdutos();
+}, []);
+
+// Função para listar todos os produtos
+const listarProdutos = () => {
+  fetch("http://localhost:8080/api/produtos/listarProdutos")
+    .then(resposta => resposta.json())
+    .then(dados => {
+      setProdutos(dados);
+    })
+    .catch(error => console.error("Erro ao buscar produtos:", error));
+};
+
 
   return (
     <Router>
@@ -167,8 +202,13 @@ function App() {
                   cadastrarProduto={cadastrarProduto}
                   cancelar={cancelarProduto}
                 />
+                <TabelaProduto
+                    registros={produtos}
+                    funcaoSelecionar={selecionarProdutoEspecifico}
+                />
               </>
             }
+            
           />
         </Route>
       </Routes>

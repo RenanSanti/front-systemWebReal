@@ -12,7 +12,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 30px 40px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 h2 {
@@ -71,7 +71,7 @@ select:focus {
 
 .input-nome {
   align-self: center;
-  width: 150%;        /* ocupa toda a largura disponível */
+  width: 200%;        /* ocupa toda a largura disponível */
   max-width: 500px;   /* limite máximo opcional */
   font-size: 16px;    /* aumenta o tamanho da fonte */
   padding: 10px;      /* aumenta o espaço interno */
