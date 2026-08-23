@@ -2,7 +2,7 @@
 import "./Produto.css";
 
 // Componente
-function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadastrarProduto }) {
+function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadastrarProduto, grausEsfericos }) {
     return (
     <div className="produtos-wrapper">
       <div className="produtos-card">
@@ -89,42 +89,12 @@ function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadas
                 onChange={atualizarProdutoSelecionado}
              
             >
-              <option value="+400">+400</option>
-              <option value="+375">+375</option>
-              <option value="+350">+350</option>
-              <option value="+325">+325</option>
-              <option value="+300">+300</option>
-              <option value="+275">+275</option>
-              <option value="+250">+250</option>
-              <option value="+225">+225</option>
-              <option value="+200">+200</option>
-              <option value="+175">+175</option>
-              <option value="+150">+150</option>
-              <option value="+125">+125</option>
-              <option value="+100">+100</option>
-              <option value="+175">+175</option>
-              <option value="+150">+150</option>
-              <option value="+125">+125</option>
-              <option value="+075">+075</option>
-              <option value="+050">+050</option>
-              <option value="+025">+025</option>
-              <option value="-000">-000</option>
-              <option value="-025">-025</option>
-              <option value="-050">-050</option>
-              <option value="-075">-075</option>
-              <option value="-100">-100</option>
-              <option value="-125">-125</option>
-              <option value="-150">-150</option>
-              <option value="-175">-175</option>
-              <option value="-200">-200</option>
-              <option value="-225">-225</option>
-              <option value="-250">-250</option>
-              <option value="-275">-275</option>
-              <option value="-300">-300</option>
-              <option value="-325">-325</option>
-              <option value="-350">-350</option>
-              <option value="-375">-375</option>
-              <option value="-400">-400</option>
+              <option value="">Selecione...</option>
+              {grausEsfericos.map((obj) => (
+                    <option key={obj.id} value={obj.nome}>
+                    {obj.nome}
+                    </option>
+                ))}
 
             </select>
           </div>

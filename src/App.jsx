@@ -35,6 +35,27 @@ function App() {
     precoCompra: "",
     precoVenda: ""
   });
+  const [grausEsfericos, setGrausEsfericos] = useState([]);
+
+  useEffect(() => {
+  // Buscar produtos
+  //listarProdutos();
+
+  // Buscar graus esféricos
+  fetch("http://localhost:8080/api/grau/listarGrausEsferico")
+    .then(res => res.json())
+    .then(dados => {
+        setGrausEsfericos(dados);
+        console.table(dados);
+    })
+    .catch(err => console.error("Erro ao buscar graus esféricos:", err));
+
+  // Buscar graus cilíndricos
+  //fetch("http://localhost:8080/api/produtos/listarGrausCilindricos")
+   // .then(res => res.json())
+   // .then(dados => setGrausCilindricos(dados))
+   // .catch(err => console.error("Erro ao buscar graus cilíndricos:", err));
+}, []);
 
    // Funções de Produto
   const atualizarProdutoSelecionado = (e) => {
@@ -201,6 +222,7 @@ const listarProdutos = () => {
                   atualizarProdutoSelecionado={atualizarProdutoSelecionado}
                   cadastrarProduto={cadastrarProduto}
                   cancelar={cancelarProduto}
+                  grausEsfericos={grausEsfericos}
                 />
                 <TabelaProduto
                     registros={produtos}
