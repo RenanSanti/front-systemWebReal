@@ -2,7 +2,7 @@
 import "./Produto.css";
 
 // Componente
-function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadastrarProduto, grausEsfericos }) {
+function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadastrarProduto, cancelar, alterar, deletar, grausEsfericos }) {
     return (
     <div className="produtos-wrapper">
       <div className="produtos-card">
@@ -109,7 +109,7 @@ function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadas
                 onChange={atualizarProdutoSelecionado}
              
             >
-               <option value="-000">-000</option>
+              <option value="-000">-000</option>
               <option value="-025">-025</option>
               <option value="-050">-050</option>
               <option value="-075">-075</option>

@@ -37,7 +37,7 @@ function App() {
   });
   const [grausEsfericos, setGrausEsfericos] = useState([]);
 
-  useEffect(() => {
+ /* useEffect(() => {
   // Buscar produtos
   //listarProdutos();
 
@@ -55,7 +55,7 @@ function App() {
    // .then(res => res.json())
    // .then(dados => setGrausCilindricos(dados))
    // .catch(err => console.error("Erro ao buscar graus cilíndricos:", err));
-}, []);
+}, []);*/
 
    // Funções de Produto
   const atualizarProdutoSelecionado = (e) => {
@@ -63,15 +63,7 @@ function App() {
     setProdutoSelecionado({ ...produtoSelecionado, [name]: value });
   };
 
-  useEffect(() => {
-    fetch("https://systemawebreal.onrender.com/api/usuarios/listarUsuarios")
-      .then(resposta => resposta.json())
-      .then(dados => {
-        setPessoas(dados);
-        console.table(dados);
-      })
-      .catch(error => console.error("Erro ao buscar usuários:", error));
-  }, []);
+  
 
   const atualizarPessoaSelecionada = (e) => {
     const { name, value } = e.target;
@@ -134,8 +126,8 @@ function App() {
   };
   
   const cadastrarProduto = () => {
-    //fetch("https://systemawebreal.onrender.com/api/produtos/cadastrarProduto", {
-    fetch("http://localhost:8080/api/produtos/cadastrarProduto", {
+    fetch("https://systemawebreal.onrender.com/api/produtos/cadastrarProduto", {
+    //fetch("http://localhost:8080/api/produtos/cadastrarProduto", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(produtoSelecionado)
@@ -172,16 +164,69 @@ function App() {
 // Buscar produtos ao abrir a tela
 useEffect(() => {
    listarProdutos();
+   listarGrausEsferico();
+   listarUsuario();
 }, []);
 
 // Função para listar todos os produtos
 const listarProdutos = () => {
-  fetch("http://localhost:8080/api/produtos/listarProdutos")
+  //fetch("http://localhost:8080/api/produtos/listarProdutos")
+  fetch("https://systemawebreal.onrender.com/api/produtos/listarProdutos")
     .then(resposta => resposta.json())
     .then(dados => {
       setProdutos(dados);
     })
     .catch(error => console.error("Erro ao buscar produtos:", error));
+};
+
+const listarGrausEsferico = () => {
+ //fetch("http://localhost:8080/api/grau/listarGrausEsferico")
+ fetch("https://systemawebreal.onrender.com/api/grau/listarGrausEsferico")
+    .then(res => res.json())
+    .then(dados => {
+        setGrausEsfericos(dados);
+        console.table(dados);
+    })
+    .catch(err => console.error("Erro ao buscar graus esféricos:", err));
+};
+const listarUsuario = () => {
+        fetch("https://systemawebreal.onrender.com/api/usuarios/listarUsuarios")
+        .then(resposta => resposta.json())
+        .then(dados => {
+            setPessoas(dados);
+            console.table(dados);
+        })
+        .catch(error => console.error("Erro ao buscar usuários:", error));
+    };
+
+const alterarProduto = () => {
+  //fetch("http://localhost:8080/api/produtos/alterarProduto/" + produtoSelecionado.id, {
+  fetch("https://systemawebreal.onrender.com/api/produtos/alterarProduto/" + produtoSelecionado.id, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(produtoSelecionado)
+  })
+    .then(resposta => resposta.json())
+    .then(() => {
+      listarProdutos();   // recarrega a lista completa
+      cancelarProduto();
+    })
+    .catch(error => console.error("Erro ao alterar produto:", error));
+};
+
+const deletarProduto = () => {
+  //fetch("http://localhost:8080/api/produtos/deletarProduto/" + produtoSelecionado.id, {
+  fetch("https://systemawebreal.onrender.com/api/produtos/deletarProduto/" + produtoSelecionado.id, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(resposta => {
+      if (resposta.ok) {
+        listarProdutos();   // recarrega a lista completa
+        cancelarProduto();
+      }
+    })
+    .catch(error => console.error("Erro ao deletar produto:", error));
 };
 
 
@@ -222,6 +267,8 @@ const listarProdutos = () => {
                   atualizarProdutoSelecionado={atualizarProdutoSelecionado}
                   cadastrarProduto={cadastrarProduto}
                   cancelar={cancelarProduto}
+                  alterar={alterarProduto}         // <-- novo
+                  deletar={deletarProduto}         // <-- novo
                   grausEsfericos={grausEsfericos}
                 />
                 <TabelaProduto
