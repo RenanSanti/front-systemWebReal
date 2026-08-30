@@ -60,12 +60,14 @@ function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadas
                 onChange={atualizarProdutoSelecionado}
              
             >
-              <option value="VS INCOLOR CAHVE 01">VS INCOLOR CAHVE 01</option>
-              <option value="VS INCULOR CAHVE 02">VS INCULOR CAHVE 02</option>
-              <option value="VS AR CHAVE 01">VS AR CHAVE 01</option>
-              <option value="VS AR CHAVE 02">VS AR CHAVE 02</option>
+              <option value="VS INCOLOR CHAVE 01">VS INCOLOR CHAVE 01</option>
+              <option value="VS INCULOR CHAVE 02">VS INCULOR CHAVE 02</option>
+              <option value="VS AR CHAVE 01">VS AR CHAVE 01 VG</option>
+              <option value="VS AR CHAVE 02">VS AR CHAVE 02 VG</option>
               <option value="VS BLUE CHAVE 01">VS BLUE CHAVE 01</option>
               <option value="VS BLUE CHAVE 02">VS BLUE CHAVE 02</option>
+              <option value="VS BLUE CHAVE 01">VS BLUE CHAVE 01 HTK</option>
+              <option value="VS BLUE CHAVE 02">VS BLUE CHAVE 02 HTK</option>
             </select>
           </div>
         <div className="input-nome form-row">
