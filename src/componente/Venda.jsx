@@ -60,6 +60,7 @@ function Vendas() {
         </div>
 
         <h3>👓 Esférico / Cilíndrico / Eixo</h3>
+        <h1>Longe</h1>
         <div className="lentes-grid">
           <div className="lente-col">
             <span>O.D.</span>
@@ -73,7 +74,13 @@ function Vendas() {
             <input id="cilindrico-oe" type="text" placeholder="Cilíndrico" className="input"/>
             <input id="eixo-oe" type="text" placeholder="Eixo" className="input"/>
           </div>
+          <div className="lente-col">
+            <span>Adição </span>
+            <input id="adicao" type="text" placeholder="Adição" className="input"/>
+          </div>
         </div>
+
+
 
         <h3>📏 DNP / Altura</h3>
         <div className="medidas-grid">
