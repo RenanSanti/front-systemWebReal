@@ -8,8 +8,8 @@ function TabelaProduto({ registros, funcaoSelecionar }) {
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Nome</th>
                     <th>Tipo da Lente</th>
+                    <th>Linha</th>
                     <th>Material</th>
                     <th>Quantidade</th>
                     <th>Preço Compra</th>
@@ -22,8 +22,8 @@ function TabelaProduto({ registros, funcaoSelecionar }) {
                     registros.map((produto, indice) => (
                         <tr key={produto.id}>
                             <td>{produto.id}</td>
-                            <td>{produto.nome}</td>
                             <td>{produto.tipoLente}</td>
+                            <td>{produto.linha}</td>
                             <td>{produto.tipoMaterial}</td>
                             <td>{produto.quantidade}</td>
                             <td>{produto.precoCompra}</td>
