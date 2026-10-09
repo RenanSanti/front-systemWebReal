@@ -61,13 +61,13 @@ function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadas
              
             >
               <option value="VS INCOLOR CHAVE 01 VG">VS INCOLOR CHAVE 01 VG</option>
-              <option value="VS INCOLOR CHAVE 02 VG">VS INCOLOR CHAVE 02</option>
+              <option value="VS INCOLOR CHAVE 02 VG">VS INCOLOR CHAVE 02 VG</option>
               <option value="VS AR CHAVE 01 VG">VS AR CHAVE 01 VG</option>
               <option value="VS AR CHAVE 02 VG">VS AR CHAVE 02 VG</option>
               <option value="VS AR CHAVE 01 HTK">VS AR CHAVE 01 HTK</option>
               <option value="VS AR CHAVE 02 HTK">VS AR CHAVE 02 HTK</option>
               <option value="VS BLUE CHAVE 01 VG">VS BLUE CHAVE 01 VG</option>
-              <option value="VS BLUE CHAVE 02 VG">VS BLUE CHAVE 02</option>
+              <option value="VS BLUE CHAVE 02 VG">VS BLUE CHAVE 02 VG</option>
               <option value="VS BLUE CHAVE 01 HTK">VS BLUE CHAVE 01 HTK</option>
               <option value="VS BLUE CHAVE 02 HTK">VS BLUE CHAVE 02 HTK</option>
             </select>
