@@ -175,6 +175,7 @@ const listarProdutos = () => {
     .then(resposta => resposta.json())
     .then(dados => {
       setProdutos(dados);
+      console.table(dados);
     })
     .catch(error => console.error("Erro ao buscar produtos:", error));
 };
@@ -185,7 +186,7 @@ const listarGrausEsferico = () => {
     .then(res => res.json())
     .then(dados => {
         setGrausEsfericos(dados);
-        console.table(dados);
+        //console.table(dados);
     })
     .catch(err => console.error("Erro ao buscar graus esféricos:", err));
 };
@@ -194,7 +195,7 @@ const listarUsuario = () => {
         .then(resposta => resposta.json())
         .then(dados => {
             setPessoas(dados);
-            console.table(dados);
+            /console.table(dados);
         })
         .catch(error => console.error("Erro ao buscar usuários:", error));
     };
