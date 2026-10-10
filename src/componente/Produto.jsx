@@ -56,7 +56,7 @@ function Produto({ botao, produtoSelecionado, atualizarProdutoSelecionado, cadas
               id="linha"
                 name="linha"
                 className="form-control"
-                value={produtoSelecionado.linha || ""}
+                value={produtoSelecionado.linha || "VS BLUE CHAVE 01 HTK"}
                 onChange={atualizarProdutoSelecionado}
              
             >
