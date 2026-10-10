@@ -152,7 +152,7 @@ function App() {
         nome: "", 
         tipoLente: "VISAO SIMPLES",
         tipoMaterial: "RESINA",
-        linha: "VS AR CHAVE 01",
+        linha: "VS BLUE CHAVE 01 HTK",
         grauEsferico: "-000",
         grauCilindrico: "-000",
         quantidade: "",
