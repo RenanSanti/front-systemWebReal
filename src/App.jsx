@@ -195,7 +195,7 @@ const listarUsuario = () => {
         .then(resposta => resposta.json())
         .then(dados => {
             setPessoas(dados);
-            /console.table(dados);
+            //console.table(dados);
         })
         .catch(error => console.error("Erro ao buscar usuários:", error));
     };
